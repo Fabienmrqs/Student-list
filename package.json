@@ -1,15 +1,31 @@
 {
   "name": "Student-list",
   "private": true,
+  "skpm": {
+    "main": "styleguide.sketchplugin",
+    "manifest": "src/manifest.json"
+  },
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer"
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "render": "skpm-build --watch --run",
+    "render:once": "skpm-build --run",
+    "postinstall": "npm run build && skpm-link"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "meteor-node-stubs": "^0.4.1"
+    "meteor-node-stubs": "^0.4.1",
+    "chroma-js": "^1.2.2",
+    "react": "^16.3.2",
+    "react-sketchapp": "^2.0.0",
+    "react-test-renderer": "^16.3.2"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.4.0"
   },
   "meteor": {
     "mainModule": {
