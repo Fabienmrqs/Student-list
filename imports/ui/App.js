@@ -5,6 +5,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 
 import { Tasks } from '../api/tasks.js';
+import AccountsUIWrapper from './AccountsUIWrapper.js';
+
 
 
 
@@ -63,6 +65,9 @@ import { Tasks } from '../api/tasks.js';
                         />
                         Hide Completed Tasks
                     </label>
+
+                    <AccountsUIWrapper />
+
 
                     <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
                     <input
