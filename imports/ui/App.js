@@ -39,7 +39,11 @@ import { Tasks } from '../api/tasks.js';
 
 
     renderTasks() {
-        return this.props.tasks.map((task) => (
+        let filteredTasks = this.props.tasks;
+        if (this.state.hideCompleted) {
+            filteredTasks = filteredTasks.filter(task => !task.checked);
+        }
+        return filteredTasks.map((task) => (
             <Task key={task._id} task={task} />
         ));
     }
@@ -78,5 +82,7 @@ import { Tasks } from '../api/tasks.js';
 export default withTracker(() => {
     return {
         tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
+        incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
+
     };
 })(App);
