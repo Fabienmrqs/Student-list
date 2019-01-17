@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import Task from './Task.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
-
+import { Meteor } from 'meteor/meteor';
 import { Tasks } from '../api/tasks.js';
+
 import AccountsUIWrapper from './AccountsUIWrapper.js';
 
 
@@ -28,7 +29,12 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
          Tasks.insert({
              text,
              createdAt: new Date(),
+             owner: Meteor.userId(),
+             username: Meteor.user().username,
          });
+
+
+
 
          ReactDOM.findDOMNode(this.refs.textInput).value = '';
      }
@@ -54,27 +60,24 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
             <div className="container">
                 <header>
 
-                    <h1>Todo List ({this.props.incompleteCount})</h1>
-
-                    <label className="hide-completed">
-                        <input
-                            type="checkbox"
-                            readOnly
-                            checked={this.state.hideCompleted}
-                            onClick={this.toggleHideCompleted.bind(this)}
-                        />
-                        Hide Completed Tasks
-                    </label>
+                    <h1>Liste des élèves ({this.props.incompleteCount})</h1>
 
                     <AccountsUIWrapper />
 
+                    { this.props.currentUser ?
+                        <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+                            <input
+                                type="text"
+                                ref="textInput"
+                                placeholder="Ajouter le nom de l'élève"
+                            />
+                        </form> :''
+
+                    }
+
 
                     <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                    <input
-                        type="text"
-                        ref="textInput"
-                        placeholder="Type to add new tasks"
-                    />
+
                 </form>
                 </header>
 
@@ -89,6 +92,6 @@ export default withTracker(() => {
     return {
         tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
         incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
-
+        currentUser: Meteor.user(),
     };
 })(App);
