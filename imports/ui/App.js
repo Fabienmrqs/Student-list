@@ -84,6 +84,7 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
                     {this.renderTasks()}
                 </ul>
             </div>
+
         );
     }
 }

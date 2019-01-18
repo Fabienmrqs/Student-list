@@ -42,7 +42,6 @@ body {
 }
 
 .container {
-  max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
   background: white;
@@ -58,6 +57,7 @@ header {
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.08);
 }
 .header{
+  padding: 0 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,6 +66,16 @@ header {
   display: block;
   color: #0070C9;
 }
+
+.accounts-dialog {
+  width: auto;
+}
+
+.login-button {
+  width: 140px !important;
+}
+
+
 
 h1 {
   font-size: 16px;
@@ -81,9 +91,13 @@ h1 {
 }
 
 form {
-  margin-top: 20px;
-  margin-bottom: -10px;
+  margin-top: 40px;
   position: relative;
+}
+
+.forms {
+  margin-left: 170px;
+  width: 300px;
 }
 
 .username {
@@ -92,11 +106,12 @@ form {
 
 .new-task input {
   box-sizing: border-box;
-  padding: 10px 0;
-  background: transparent;
+  padding: 10px 0 10px 10px;
+  background: #F0F0F0;
   border: none;
+  border-bottom: 1px solid black;
+  border-radius: 5px 5px 0 0;
   width: 100%;
-  padding-right: 80px;
   font-size: 1em;
 }
 
@@ -105,9 +120,15 @@ form {
 }
 
 ul {
-  margin: 0;
+  margin: 0 170px;
   padding: 0;
   background: white;
+  font-family: 'AktivGrotesk-Regular';
+}
+
+.footerText {
+  color: white;
+  text-align: center;
 }
 
 .delete {
