@@ -49,6 +49,7 @@ body {
 
 header {
   background: #ffffff;
+  width: 100%;
   /*background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);*/
   padding: 20px;
   position: relative;
@@ -56,12 +57,14 @@ header {
   -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.08);
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.08);
 }
+
 .header{
   padding: 0 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 #login-buttons {
   display: block;
   color: #0070C9;
@@ -74,8 +77,6 @@ header {
 .login-button {
   width: 140px !important;
 }
-
-
 
 h1 {
   font-size: 16px;
@@ -186,24 +187,61 @@ header .hide-completed {
     padding-bottom: 5px;
   }
 }
+
 .login-close-text{
   color: #0070C9;
   font-size: 14px !important;
 }
+
 .accounts-dialog{
   border: 0 !important;
   box-shadow: none !important;
 }
+
 #login-buttons .login-button, .accounts-dialog .login-button{
   background: #0070C9;
   border-radius: 0;
   border: 0;
 }
+
 #login-buttons .login-button:hover, .accounts-dialog .login-button:hover{
   background: #FFF;
   color: #0070C9;
   border: 1px solid #0070C9;
 }
+
 #login-buttons input[type=text], .accounts-dialog input[type=text], #login-buttons input[type=email], .accounts-dialog input[type=email], #login-buttons input[type=password], .accounts-dialog input[type=password]{
   border-radius: 0 !important;
+}
+
+@media (max-width: 375px) {
+  .header{
+    padding: 0 20px;
+  }
+  .forms {
+    margin-left: 40px;
+    width: 200px;
+  }
+  ul {
+    margin: 0 40px;
+  }
+  header {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header{
+    padding: 0 20px;
+  }
+  .forms {
+    margin-left: 40px;
+    width: 200px;
+  }
+  ul {
+    margin: 0 40px;
+  }
+  header {
+    width: auto;
+  }
 }
