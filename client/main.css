@@ -29,21 +29,26 @@ header {
   padding: 20px 15px 15px 15px;
   position: relative;
 }
-
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #login-buttons {
   display: block;
+  color: #0070C9;
 }
 
 h1 {
   font-size: 1.5em;
   margin: 0;
-  margin-bottom: 10px;
+  font-weight: normal;
   display: inline-block;
   margin-right: 1em;
 }
 
 form {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: -10px;
   position: relative;
 }
@@ -81,7 +86,7 @@ li {
   position: relative;
   list-style: none;
   padding: 15px;
-  border-bottom: #eee solid 1px;
+  margin-top: 15px;
 }
 
 li .text {
@@ -122,4 +127,25 @@ header .hide-completed {
   .new-task input {
     padding-bottom: 5px;
   }
+}
+.login-close-text{
+  color: #0070C9;
+  font-size: 14px !important;
+}
+.accounts-dialog{
+  border: 0 !important;
+  box-shadow: none !important;
+}
+#login-buttons .login-button, .accounts-dialog .login-button{
+  background: #0070C9;
+  border-radius: 0;
+  border: 0;
+}
+#login-buttons .login-button:hover, .accounts-dialog .login-button:hover{
+  background: #FFF;
+  color: #0070C9;
+  border: 1px solid #0070C9; 
+}
+#login-buttons input[type=text], .accounts-dialog input[type=text], #login-buttons input[type=email], .accounts-dialog input[type=email], #login-buttons input[type=password], .accounts-dialog input[type=password]{
+  border-radius: 0 !important;
 }
