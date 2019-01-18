@@ -59,32 +59,32 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
         return (
             <div className="container">
                 <header>
-
-                    <h1>Liste des élèves ({this.props.incompleteCount})</h1>
-
-                    <AccountsUIWrapper />
-
-                    { this.props.currentUser ?
-                        <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                            <input
-                                type="text"
-                                ref="textInput"
-                                placeholder="Ajouter le nom de l'élève"
-                            />
-                        </form> :''
-
-                    }
-
-
-                    <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-
-                </form>
+                    <div className="header">
+                        <h1 className="logo">Student-list <span className="numberStudents">({this.props.incompleteCount})</span></h1>
+                        <span className="username"><AccountsUIWrapper /></span>
+                    </div>
                 </header>
+                    <div className="forms">
+                        { this.props.currentUser ?
+                            <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+                                <input
+                                    type="text"
+                                    ref="textInput"
+                                    placeholder="Ajouter le nom de l'élève"
+                                />
+                            </form> :''
+
+                        }
+
+
+                        <form className="new-task" onSubmit={this.handleSubmit.bind(this)} ></form>
+                    </div>
 
                 <ul>
                     {this.renderTasks()}
                 </ul>
             </div>
+
         );
     }
 }
