@@ -18,13 +18,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-
     "classnames": "^2.2.6",
     "meteor-node-stubs": "^0.4.1",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
-
-   
+    "react-dom": "^16.7.0",
+    "reactdom": "^2.0.0"
   },
   "meteor": {
     "mainModule": {

@@ -1,3 +1,28 @@
+@font-face {
+  font-family: 'AktivGrotesk-Regular';
+  src: url('../fonts/AktivGrotesk-Regular.otf');
+}
+
+@font-face {
+  font-family: 'AktivGrotesk-Black';
+  src: url('../fonts/AktivGrotesk-Black.otf');
+}
+
+@font-face {
+  font-family: 'AktivGrotesk-Bold';
+  src: url('../fonts/AktivGrotesk-Bold.otf');
+}
+
+@font-face {
+  font-family: 'AktivGrotesk-Light';
+  src: url('../fonts/AktivGrotesk-Light.otf');
+}
+
+@font-face {
+  font-family: 'AktivGrotesk-Medium';
+  src: url('../fonts/AktivGrotesk-Light.otf');
+}
+
 body {
   font-family: sans-serif;
   background-color: #ffffff;
@@ -26,8 +51,11 @@ body {
 header {
   background: #ffffff;
   /*background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);*/
-  padding: 20px 15px 15px 15px;
+  padding: 20px;
   position: relative;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.08);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.08);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.08);
 }
 .header{
   display: flex;
@@ -40,17 +68,26 @@ header {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 16px;
   margin: 0;
   font-weight: normal;
   display: inline-block;
   margin-right: 1em;
+  font-family: 'AktivGrotesk-Black';
+}
+
+.numberStudents {
+  font-family: 'AktivGrotesk-Medium';
 }
 
 form {
   margin-top: 20px;
   margin-bottom: -10px;
   position: relative;
+}
+
+.username {
+  font-family: 'AktivGrotesk-Regular';
 }
 
 .new-task input {
@@ -144,7 +181,7 @@ header .hide-completed {
 #login-buttons .login-button:hover, .accounts-dialog .login-button:hover{
   background: #FFF;
   color: #0070C9;
-  border: 1px solid #0070C9; 
+  border: 1px solid #0070C9;
 }
 #login-buttons input[type=text], .accounts-dialog input[type=text], #login-buttons input[type=email], .accounts-dialog input[type=email], #login-buttons input[type=password], .accounts-dialog input[type=password]{
   border-radius: 0 !important;

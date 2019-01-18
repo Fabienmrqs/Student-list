@@ -60,9 +60,10 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
             <div className="container">
                 <header>
                     <div className="header">
-                        <h1>Liste des élèves ({this.props.incompleteCount})</h1>
-                        <AccountsUIWrapper />
+                        <h1 className="logo">Student-list <span className="numberStudents">({this.props.incompleteCount})</span></h1>
+                        <span className="username"><AccountsUIWrapper /></span>
                     </div>
+                </header>
                     <div className="forms">
                         { this.props.currentUser ?
                             <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
@@ -78,8 +79,6 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
 
                         <form className="new-task" onSubmit={this.handleSubmit.bind(this)} ></form>
                     </div>
-  
-                </header>
 
                 <ul>
                     {this.renderTasks()}
