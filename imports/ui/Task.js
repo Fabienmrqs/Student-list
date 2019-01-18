@@ -9,7 +9,6 @@ export default class Task extends Component {
     }
 
     toggleChecked() {
-        // Set the checked property to the opposite of its current value
         Tasks.update(this.props.task._id, {
             $set: { checked: !this.props.task.checked },
         });
@@ -43,10 +42,8 @@ export default class Task extends Component {
     }
 
     render() {
-        // Give tasks a different className when they are checked off,
         const taskClassName = this.props.task.checked ? 'checked' : '';
 
-        
             return (
                 <li className={taskClassName}>
                     <button className="delete" onClick={this.deleteThisTask.bind(this)}>
@@ -56,13 +53,6 @@ export default class Task extends Component {
                         modifier
                     </button>
 
-    
-                    {/*<input*/}
-                        {/*type="checkbox"*/}
-                        {/*readOnly*/}
-                        {/*checked={!!this.props.task.checked}*/}
-                        {/*onClick={this.toggleChecked.bind(this)}*/}
-                    {/*/>*/}
                     <span  className="text">{this.props.task.text}</span>
                         {this.state.modify == true &&  <form onSubmit={this.ReAdd}>
                     <input name="name" type="text" ref="username" />
